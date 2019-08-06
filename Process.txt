@@ -1,0 +1,28 @@
+DataSet Folder hierarchy:
+        data--->
+            dosa--->
+            idli--->
+            meduvada--->
+            nosouth--->
+
+
+urls.txt   for idli images
+urls1.txt  for dosa images
+urls2.txt  for meduvada images
+urls3.txt  for nosouth images
+
+
+//// download images in respective folder
+python download_images.py --urls urls.txt --output data/idli
+python download_images.py --urls urls1.txt --output data/dosa
+python download_images.py --urls urls2.txt --output data/meduvada
+python download_images.py --urls urls3.txt --output data/nosouth
+
+//// prepare data for execution
+python prepareData.py
+
+//// create model and training
+python myModel.py
+
+//// to run the model for image classification
+python runScript.py --image <path/name of image>
